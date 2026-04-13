@@ -8,7 +8,6 @@ while (redZone < 2):
     value = int(input("Insira o valor em PCU: "))
     lecturesRealized +=1
 
-    # acima de 150
     if value > 150:
         adjust = value + value*0.08
 
@@ -20,7 +19,6 @@ while (redZone < 2):
             greenZone += 1
             redZone = 0
 
-    # abaixo de 151    
     else:
         adjust = value - value*0.04
 
