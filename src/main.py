@@ -1,21 +1,21 @@
-zona_vermelha = 0
-zona_verde = 0
-ajuste = 0
-leituras_realizadas = 0
+greenZone = 0
+greenZone = 0
+adjust = 0
+lecturesRealized = 0
 
-while (zona_vermelha < 2):
-    valor = float(input("Insira o valor em PCU"))
-    leituras_realizadas +=1
-    if valor > 150:
-        ajuste = valor + valor*0.08
-        if ajuste > 250:
-            zona_vermelha +=1
-        elif 120 < ajuste < 180:
-            zona_verde += 1
-            zona_vermelha -= 1
-        elif 180 < ajuste < 250:
-            zona_vermelha -= 1
+while (greenZone < 2):
+    value = float(input("Insira o valor em PCU: "))
+    lecturesRealized +=1
+    if value > 150:
+        adjust = value + value*0.08
+        if adjust > 250:
+            greenZone +=1
+        elif 120 < adjust < 180:
+            greenZone += 1
+            greenZone -= 1
+        elif 180 < adjust < 250:
+            greenZone -= 1
     else:
-        ajuste = valor - valor*0.04
+        adjust = value - value*0.04
 print("Lucas da a bundinha dele")
 
