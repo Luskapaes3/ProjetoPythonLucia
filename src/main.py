@@ -15,7 +15,7 @@ while (zona_vermelha < 2):
             zona_vermelha -= 1
         elif 180 < ajuste < 250:
             zona_vermelha -= 1
-
     else:
         ajuste = valor - valor*0.04
 print("Lucas da a bundinha dele")
+
