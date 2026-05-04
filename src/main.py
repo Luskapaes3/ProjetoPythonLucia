@@ -4,8 +4,7 @@ def adjust_value(value):
     else:
         return value - value*0.04
 
-def handle_consecutive_red(value,con):
-
+def update_consecutive_red(value,con):
     if value > 250:
         return con + 1
     else:
@@ -22,7 +21,9 @@ def get_stabillity_zone(value):
 
 def end_system():
     
-    print("Sistema encerrado!")
+    print(f"\nSistema encerrado!")
+
+
 
 
 
@@ -34,21 +35,20 @@ def main_fuction():
 
     
     consecutive_red = 0
-    value = float(input(f"\nInsira o valor da pressao em PCU, insira um valor negativo para encerrar o programa: "))
+    value = float(input(f"\n Insira o valor da pressao em PCU, insira um valor negativo para encerrar o programa: "))
     while(value >= 0):
 
         value = adjust_value(value)
-        print(f"valor  convertido: {value}")
+        print(f"\nValor  convertido: {value}")
 
-        print(f"O valor: {value} faz parte da --> {get_stabillity_zone(value)}")
+        print(f"Faz parte da --> {get_stabillity_zone(value)}")
 
-        consecutive_red = handle_consecutive_red(value,consecutive_red)
+        consecutive_red = update_consecutive_red(value,consecutive_red)
 
         if consecutive_red < 2:
-            value = float(input("Insira o valor da pressao em PCU, insira um valor negativo para encerrar o programa: "))
+            value = float(input(f"\nInsira o valor da pressao em PCU, insira um valor negativo para encerrar o programa: "))
         else:
             break
-        
     end_system()
             
 main_fuction()
